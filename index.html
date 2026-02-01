@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makronix</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="/assets/logo.png">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/logo.png">
+                <a href="#home" class="nav-logo">Makronix</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                <li><a href="#tentang" class="nav-link">Tentang</a></li>
+                <li><a href="#produk" class="nav-link">Produk</a></li>
+                <li><a href="#layanan" class="nav-link">Layanan</a></li>
+                <li><a href="#kontak" class="nav-link">Kontak</a></li>
+                <button class="nav-button">Pesan Sekarang</button>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 data-aos="fade-right">Pedasnya Nampol, Kriuknya Juara!</h1>
+                <h3 data-aos="fade-right" data-aos-delay="150">Makaroni Kriuk Pedas Favorit Anak Muda</h3>
+                <button class="hero-btn" data-aos="fade-right" data-aos-delay="200">Lihat Produk!</button>
+            </div>
+            <div class="hero-produk">
+                <img src="assets/hero-produk.png" alt="hero-produk" data-aos="zoom-in">
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="tentang">
+        <div class="tentang-container">
+            <div class="tentang-produk">
+                <img src="assets/tentang-produk-1.png" alt="tentang-produk-1" data-aos="fade-up">
+                <img src="assets/tentang-produk-2.png" alt="tentang-produk-2" data-aos="fade-down" data-aos-delay="150">
+                <img src="assets/tentang-produk-3.png" alt="tentang-produk-3" data-aos="fade-left" data-aos-delay="200">
+            </div>
+            <div class="tentang-divider"></div>
+            <div class="tentang-text">
+                <h1 data-aos="fade-left" data-aos-delay="150">Makronix??</h1>
+                <p data-aos="fade-left" data-aos-delay="250">Makaronix adalah camilan crunchy yang dibuat untuk pecinta rasa pedas dan gurih. Kami menghadirkan
+                    makaron renyah dengan pilihan level pedas, varian rasa klasik, serta kemasan yang fleksibel untuk
+                    dinikmati kapan saja. Dengan bahan pilihan dan proses yang higienis, Makaronix siap menjadi teman
+                    ngemil favoritmu di setiap suasana.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="produk" class="produk">
+        <h2 class="produk-title" data-aos="fade-down">
+            Varian Favorit Makronix
+            <span></span>
+        </h2>
+
+        <div class="produk-wrapper" data-aos="zoom-out">
+
+            <!-- tombol kiri -->
+            <button class="produk-nav left" onclick="slideProduk(-1)">&#10094;</button>
+
+            <!-- container slider -->
+            <div class="produk-slider">
+                <div class="produk-track">
+
+                    <!-- Produk 1 -->
+                    <div class="produk-card" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="assets/produk-1.png" alt="">
+                        <h3>Makronix Spicy Crunch</h3>
+                        <p class="harga">Rp. 25.000</p>
+                        <button class="order-btn">Order Now ›</button>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="produk-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/produk-2.png" alt="">
+                        <h3>Makronix Classic Crunch</h3>
+                        <p class="harga">Rp. 15.000</p>
+                        <button class="order-btn">Order Now ›</button>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="produk-card" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="assets/produk-3.png" alt="">
+                        <h3>Makronix Varian Crunch</h3>
+                        <p class="harga">Rp. 10.000</p>
+                        <button class="order-btn">Order Now ›</button>
+                    </div>
+
+                    <!-- Kartu kosong (template) -->
+                    <div class="produk-card empty" data-aos="zoom-in" data-aos-delay="300">
+                        <span>Coming Soon</span>
+                    </div>
+
+                    <div class="produk-card empty" data-aos="zoom-in" data-aos-delay="350">
+                        <span>Coming Soon</span>
+                    </div>
+
+                    <div class="produk-card empty" data-aos="zoom-in" data-aos-delay="400">
+                        <span>Coming Soon</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- tombol kanan -->
+            <button class="produk-nav right" onclick="slideProduk(1)">&#10095;</button>
+
+        </div>
+    </section>
+
+    <section id="layanan" class="layanan">
+        <h2 class="layanan-title" data-aos="fade-down">Layanan Kami</h2>
+        <p class="layanan-subtitle" data-aos="fade-down">
+            Pemesanan Mudah • Pengemasan Aman • Pengiriman Cepat
+        </p>
+
+        <div class="layanan-box" data-aos="zoom-in">
+            <div class="layanan-item" data-info="Pesanan dikirim dengan cepat & aman" data-aos="zoom-out" data-aos-delay="150">
+                <div class="layanan-icon">
+                    <img src="assets/layanan-1.png" alt="">
+                </div>
+                <p>Pengiriman cepat<br>& terpercaya</p>
+            </div>
+
+            <div class="layanan-item" data-info="Dikemas rapi supaya tetap renyah sampai tujuan" data-aos="zoom-out" data-aos-delay="200">
+                <div class="layanan-icon">
+                    <img src="assets/layanan-2.png" alt="">
+                </div>
+                <p>Pengemasan rapi<br>dan aman</p>
+            </div>
+
+            <div class="layanan-item" data-info="Tim kami siap membantu kamu kapan saja" data-aos="zoom-out" data-aos-delay="250">
+                <div class="layanan-icon">
+                    <img src="assets/layanan-3.png" alt="">
+                </div>
+                <p>Layanan pelanggan<br>responsif</p>
+            </div>
+
+            <div class="layanan-item" data-info="Proses pemesanan simpel dan anti ribet" data-aos="zoom-out" data-aos-delay="300">
+                <div class="layanan-icon">
+                    <img src="assets/layanan-4.png" alt="">
+                </div>
+                <p>Pemesanan mudah<br>& praktis</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
