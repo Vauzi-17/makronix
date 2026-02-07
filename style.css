@@ -258,17 +258,18 @@ html, body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-@keyframes float {
+@keyframes float-sway {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(-50px);
+        transform: translateY(-14px) rotate(0.6deg);
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
     }
 }
+
 
 .hero-produk {
     flex: 1;
@@ -283,7 +284,11 @@ html, body {
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 15px 50px rgba(0,0,0,0.3));
-    animation: float 4s ease-in-out infinite;
+    animation: float-sway 4s ease-in-out infinite;
+}
+
+.hero-produk img:hover {
+    animation-play-state: paused;
 }
 
 .tentang {
