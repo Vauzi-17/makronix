@@ -170,6 +170,11 @@ body {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+
 .hero {
     min-height: calc(100vh - 80px);
     background-color: #EA070F;
@@ -182,33 +187,33 @@ body {
 .hero::before {
     content: "";
     position: absolute;
-    top: 150px;              /* jarak dari atas */
+    top: clamp(80px, 15vh, 150px);         
     left: 0;
     width: 100%;
-    height: 10px;
+    height: clamp(6px, 1vw, 10px);
     background-color: #FF8506;
 }
 
-/* garis vertikal kiri */
 .hero::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 40px;             /* jarak dari kiri */
-    width: 10px;
+    left: clamp(16px, 3vw, 40px);
+    width: clamp(6px, 1vw, 10px);
     height: 100%;
     background-color: #FF8506;
 }
 
 .hero-content {
     width: 100%;
-    max-width: 1400px;
+    max-width: min(1400px, 100%);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4rem;
-    padding: 0 2rem;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    padding-left: clamp(2.5rem, 6vw, 5rem);
 }
 
 
@@ -220,13 +225,13 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 3vw, 3rem);
     font-weight: 800;
     line-height: 1.15;
 }
 
 .hero-text h3 {
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
     font-weight: 400;
     opacity: 0.95;
 }
@@ -253,6 +258,17 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 .hero-produk {
     flex: 1;
@@ -262,9 +278,12 @@ body {
 }
 
 .hero-produk img {
-    width: 800px;
+    width: 100%;
+    max-width: clamp(320px, 40vw, 600px);
+    height: auto;
     object-fit: contain;
     filter: drop-shadow(0 15px 50px rgba(0,0,0,0.3));
+    animation: float 4s ease-in-out infinite;
 }
 
 .tentang {
@@ -569,106 +588,308 @@ body {
     line-height: 1.5;
 }
 
-.promo {
-    padding: 6rem 2rem;
+.promo-head {
     background: #fff;
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
 }
 
-.promo-container {
+.promo-head h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #EA070F;
+    margin-bottom: 0.8rem;
+}
+
+.promo-head-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 0.8rem;
+}
+
+.promo-head-line .line {
+    width: clamp(140px, 20vw, 220px);
+    height: 3px;
+    background: #EA070F;
+}
+
+.promo-head-line .dot {
+    width: 8px;
+    height: 8px;
+    background: #EA070F;
+    transform: rotate(45deg);
+}
+
+.promo-head p {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-weight: 600;
+    color: #E52E02;
+}
+
+
+.promo-new {
+    background: url("assets/promo-bg.png") center / cover no-repeat;
+    padding: 6rem 2rem;
+    color: #fff;
+}
+
+.promo-new-container {
     max-width: 1400px;
     margin: 0 auto;
 
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
 }
 
-.promo-image {
-    flex: 1.2;                
-    display: flex;
-    justify-content: flex-start;
-}
-
-.promo-image img {
-    width: 120%;               
-    max-width: none;       
-    margin-left: -80px;    
-    object-fit: contain;
-    filter: drop-shadow(0 30px 20px rgba(0,0,0,0.7));
-}
-
-
-.promo-text {
+.promo-new-image {
     flex: 1;
-    color: #EA070F;
-    text-align: left;
+    display: flex;
+    justify-content: center;
 }
 
+.promo-new-image img {
+    width: 100%;
+    max-width: 420px;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5));
+}
 
-.promo-subtitle {
-    font-size: 1.8rem;
+.promo-new-text {
+    flex: 1;
+}
+
+.promo-new-text h1 {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.promo-new-text .highlight {
+    color: #EDFE00; 
+}
+
+.promo-desc {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.promo-btn {
+    padding: 0.9rem 2.5rem;
+    border-radius: 999px;
+    border: none;
+
+    background: #FF8506;
+    color: #fff;
+    font-size: 1.1rem;
     font-weight: 700;
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.promo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+.team {
+    padding: 6rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+/* Judul */
+.team-title {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #FF8506;
     margin-bottom: 0.6rem;
 }
 
-
-.promo-line {
+.team-line {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin: 1rem 0 2rem;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 3rem;
 }
 
-.promo-line .line {
-    width: 220px;
+.team-line .line {
+    width: clamp(160px, 25vw, 260px);
     height: 3px;
-    background: #EA070F;
+    background: #FF8506;
 }
 
-.promo-line .dot {
-    width: 10px;
-    height: 10px;
-    background: #EA070F;
-    transform: rotate(45deg); /* jadi diamond */
+.team-line .dot {
+    width: 8px;
+    height: 8px;
+    background: #FF8506;
+    transform: rotate(45deg);
 }
 
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
 
-.promo-line span {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+
+.team-card {
+    text-align: center;
+}
+
+.team-img {
+    overflow: hidden; 
+    border-radius: 50px;
+}
+
+.team-img img {
+    width: 100%;
     display: block;
-    height: 3px;
-    background: #EA070F;
+    transform: scale(1);
+    transition: transform 0.5s ease;
 }
 
-.promo-line span:first-child,
-.promo-line span:last-child {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+.team-card:hover .team-img img {
+    transform: scale(1.12);
 }
 
-.promo-line span:nth-child(2) {
-    width: 120px;
-    border-radius: 2px;
-}
-
-.promo-date {
-    font-size: 1.6rem;
+.team-card h4 {
+    margin-top: 1rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: #FF8506;
-    margin-bottom: 1.5rem;
+    color: #E52E02;
 }
 
-.promo-discount {
-    font-size: 3.4rem;
+.team-card p {
+    font-size: 0.9rem;
+    color: #FF8506;
+}
+
+.testimoni {
+    padding: 6rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+.testimoni-title {
+    font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    line-height: 1.15;
-    color: #FF8506;
+    color: #EA070F;
+    margin-bottom: 0.6rem;
 }
 
-.promo-discount span {
-    display: block;
-    font-size: 4.2rem;
-    color: #EA070F;
+.testimoni-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 4rem;
+}
+
+.testimoni-line .line {
+    width: clamp(160px, 25vw, 260px);
+    height: 3px;
+    background: #EA070F;
+}
+
+.testimoni-line .dot {
+    width: 8px;
+    height: 8px;
+    background: #FF8506;
+    transform: rotate(45deg);
+}
+
+.testimoni-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.testimoni-card {
+    position: relative;
+    background: #FF8506;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 8px 8px 0 #EA070F;
+    transition: all 0.3s ease;
+}
+
+.testimoni-card:hover {
+    box-shadow: 16px 16px 0 #EA070F;
+    transform: scale(1.03);
+}
+
+.stars {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.testimoni-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.testimoni-user {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.testimoni-user img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimoni-user h4 {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.testimoni-user span {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.testimoni-cta {
+    margin-top: 4rem;
+}
+
+.testimoni-cta a {
+    display: inline-block;
+    padding: 0.9rem 2.6rem;
+    border-radius: 999px;
+
+    background: #FF8506;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimoni-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.45);
 }
 
 .footer {
@@ -708,15 +929,26 @@ body {
     height: 42px;
     border: 2px solid #fff;
     border-radius: 50%;
-    
-   display: flex;
+
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
+    font-size: 0;             
+    line-height: 0;            
+
     color: #fff;
-    font-size: 1.1rem;
+    text-decoration: none;
     transition: 0.3s ease;
 }
+
+.footer-social i {
+    font-size: 1.1rem;         
+    line-height: 1;
+    display: block;
+}
+
+
 
 .footer-social a:hover {
     background: #fff;
@@ -751,7 +983,7 @@ body {
     opacity: 0.9;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 450px) {
 
     .hero {
         min-height: calc(100vh - 60px);
@@ -985,82 +1217,72 @@ body {
         padding: 5px 10px;
         bottom: -42px;
         max-width: 140px;
-        white-space: normal;      /* biar turun baris */
+        white-space: normal;     
         text-align: center;
     }
 
-    /* Kurangi animasi muter biar halus di HP */
-    .layanan-icon:hover {
-        transform: rotate(180deg) scale(1.05);
+    .promo-head {
+        padding: 2.2rem 1rem 2rem;
     }
-    .promo {
+
+    .promo-head h2 {
+        font-size: 1.7rem;
+    }
+
+    .promo-head p {
+        font-size: 0.85rem;
+    }
+    .promo-new {
         padding: 4rem 1rem;
     }
 
-    .promo-container {
-        flex-direction: column;
-        gap: 2.5rem;
-        text-align: center;
+    .promo-new-image img {
+        max-width: 280px;
     }
 
-    /* GAMBAR */
-    .promo-image {
-        flex: none;
-        justify-content: center;
+    .promo-desc {
+        font-size: 1rem;
     }
 
-    .promo-image img {
-        width: 100%;
-        max-width: 300px;
-        margin-left: 0; /* HAPUS efek nempel kiri */
-        filter: drop-shadow(0 18px 25px rgba(0,0,0,0.35));
+    .promo-btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
     }
 
-    /* TEKS */
-    .promo-text {
-        text-align: center;
+    .team {
+        padding: 4rem 1rem;
     }
 
-    .promo-subtitle {
-        font-size: 1.2rem;
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
-    /* LINE */
-    .promo-line {
-        justify-content: center;
-        margin: 0.8rem 0 1.5rem;
+    .team-card h4 {
+        font-size: 0.9rem;
     }
 
-    .promo-line .line {
-        width: 140px;
-        height: 3px;
+    .team-card p {
+        font-size: 0.8rem;
     }
 
-    .promo-line .dot {
-        width: 8px;
-        height: 8px;
+    .testimoni-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    /* TANGGAL */
-    .promo-date {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
+    .testimoni-card {
+        box-shadow: 10px 10px 0 #EA070F;
     }
 
-    /* DISKON */
-    .promo-discount {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-
-    .promo-discount span {
-        font-size: 2.6rem;
+    .testimoni-text {
+        font-size: 0.9rem;
     }
 
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 1.5rem;              /* DIRAPATKAN */
-        padding: 2rem 1rem;       /* DIPERKECIL */
+        gap: 1.5rem;              
+        padding: 2rem 1rem;      
         text-align: center;
     }
 
@@ -1108,19 +1330,6 @@ body {
 
 
 @media (max-width: 900px) {
-    .promo-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .promo-image img {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .promo-line {
-        justify-content: center;
-    }
      .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1203,6 +1412,15 @@ body {
     .nav-button {
         padding: 1rem 3rem;
         border-radius: 10px;
+    }
+    .promo-new-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .promo-new-text h1 {
+        font-size: 2.2rem;
     }
 }
 
