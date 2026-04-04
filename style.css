@@ -5,6 +5,11 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --max-w: 1400px;
+    --px: clamp(1.5rem, 4vw, 3rem);
+}
+
 body {
     font-family: 'Nunito', sans-serif;
 }
@@ -27,12 +32,12 @@ body {
 }
 
 .nav-container {
-    max-width: 1800px;
+    max-width: var(--max-w);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 var(--px);
 }
 
 .nav-brand {
@@ -43,7 +48,6 @@ body {
     background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    font-weight: 700;
     letter-spacing: 1px;
     position: relative;
     z-index: 1001;
@@ -54,10 +58,13 @@ body {
     transform: translateY(-5px);
 }
 
+.nav-brand a {
+    font-family: 'Black Han Sans', sans-serif;
+}
 
 .nav-logo {
     text-decoration: none;
-    color: #E52E02;;
+    color: #EA070F;
 }
 
 .nav-brand strong {
@@ -82,10 +89,10 @@ body {
 }
 
 .nav-menu a {
-    color: #E52E02;
+    color: #1a0a00;
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
     transition: all 0.3s ease;
     position: relative;
     display: block;
@@ -195,21 +202,21 @@ html, body {
 
 .hero-content {
     width: 100%;
-    max-width: min(1400px, 100%);
+    max-width: var(--max-w);
     margin: 0 auto;
+    padding: 0 var(--px);
+    /* hapus padding-left: clamp(...) yang berbeda sendiri */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: clamp(1.5rem, 4vw, 4rem);
-    padding: 0 clamp(1rem, 4vw, 2rem);
-    padding-left: clamp(2.5rem, 6vw, 5rem);
 }
 
 .hero-text {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .hero-text h1 {
@@ -227,6 +234,12 @@ html, body {
     font-size: clamp(0.95rem, 1.5vw, 1.2rem);
     font-weight: 400;
     opacity: 0.95;
+}
+
+.hero-text p {
+    margin: 1.2rem 0 2rem;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 600; opacity: .9;
 }
 
 .hero-btn {
@@ -303,10 +316,9 @@ html, body {
 
 .tentang-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: var(--max-w);
     margin: 0 auto;
-    padding: 0 2rem;
-
+    padding: 0 var(--px);
     display: flex;
     align-items: center;
     gap: 4rem;
@@ -370,9 +382,9 @@ html, body {
 }
 
 .produk {
-    padding: 6rem 2rem;
     background: #fff;
     text-align: center;
+    padding: 6rem var(--px);
 }
 
 .produk-title {
@@ -494,7 +506,7 @@ html, body {
 }
 
 .layanan {
-    padding: 6rem 2rem;
+    padding: 6rem var(--px);
     background: #fff;
     text-align: center;
 }
@@ -638,14 +650,14 @@ html, body {
 
 .promo-new {
     background: url("assets/promo-bg.png") center / cover no-repeat;
-    padding: 6rem 2rem;
+    padding: 6rem 0;
     color: #fff;
 }
 
 .promo-new-container {
-    max-width: 1400px;
+    max-width: var(--max-w);
     margin: 0 auto;
-
+    padding: 0 var(--px);
     display: flex;
     align-items: center;
     gap: 4rem;
@@ -707,7 +719,7 @@ html, body {
 }
 
 .team {
-    padding: 6rem 2rem;
+    padding: 6rem var(--px);
     background: #fff;
     text-align: center;
 }
@@ -783,7 +795,7 @@ html, body {
 }
 
 .testimoni {
-    padding: 6rem 2rem;
+    padding: 6rem var(--px);
     background: #fff;
     text-align: center;
 }
@@ -905,10 +917,9 @@ html, body {
 }
 
 .footer-container {
-    max-width: 1400px;
+    max-width: var(--max-w);
     margin: 0 auto;
-    padding: 4rem 2rem;
-
+    padding: 4rem var(--px);
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
