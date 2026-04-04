@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: poppins, sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .navbar {
@@ -174,7 +174,6 @@ html, body {
     overflow-x: hidden;
 }
 
-
 .hero {
     min-height: calc(100vh - 80px);
     background-color: #EA070F;
@@ -184,25 +183,15 @@ html, body {
     overflow: hidden;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: clamp(80px, 15vh, 150px);         
-    left: 0;
-    width: 100%;
-    height: clamp(6px, 1vw, 10px);
-    background-color: #FF8506;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: clamp(16px, 3vw, 40px);
-    width: clamp(6px, 1vw, 10px);
-    height: 100%;
-    background-color: #FF8506;
-}
+.hero-stripe {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent 0, transparent 20px,
+        rgba(255,255,255,.04) 20px, rgba(255,255,255,.04) 40px
+      );
+      pointer-events: none;
+    }
 
 .hero-content {
     width: 100%;
@@ -216,7 +205,6 @@ html, body {
     padding-left: clamp(2.5rem, 6vw, 5rem);
 }
 
-
 .hero-text {
     flex: 1;
     display: flex;
@@ -225,9 +213,14 @@ html, body {
 }
 
 .hero-text h1 {
-    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-size: clamp(2.6rem, 5.5vw, 5rem);
+    line-height: 1.05;
     font-weight: 800;
-    line-height: 1.15;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.hero-text h1 em {
+      font-style: normal; color: #EDFE00;
 }
 
 .hero-text h3 {
@@ -250,13 +243,22 @@ html, body {
     font-weight: 600;
     cursor: pointer;
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .hero-btn:hover {
     transform: scale(0.9);
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
+
+.btn-ghost {
+      padding: .85rem 2rem; border-radius: 999px;
+      background: transparent; color: #fff;
+      font-weight: 700; font-size: 1rem;
+      border: 2px solid rgba(255,255,255,.5);
+      transition: background .2s, border-color .2s;
+    }
+.btn-ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
 
 @keyframes float-sway {
     0% {
@@ -993,18 +995,6 @@ html, body {
     .hero {
         min-height: calc(100vh - 60px);
         padding-top: 2rem;
-    }
-
-    /* garis horizontal diperkecil */
-    .hero::before {
-        top: 100px;
-        height: 6px;
-    }
-
-    /* garis vertikal digeser & diperkecil */
-    .hero::after {
-        left: 20px;
-        width: 6px;
     }
 
     .hero-content {
