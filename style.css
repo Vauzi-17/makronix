@@ -540,21 +540,24 @@ html, body {
     text-align: center;
 }
 
+.layanan-badge {
+    display: inline-block;
+    width: fit-content;
+    background: #EA070F;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+}
+
 .layanan-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #FF8506;
+    color: #1a0a00;
     margin-bottom: 0.5rem;
     font-family: 'Black Han Sans', sans-serif;
-}
-
-.layanan-title::after {
-    content: "";
-    display: block;
-    width: 140px;
-    height: 4px;
-    background: #FF8506;
-    margin: 0.6rem auto 0;
 }
 
 .layanan-subtitle {
@@ -678,6 +681,17 @@ html, body {
     color: #E52E02;
 }
 
+.promo-badge {
+    display: inline-block;
+    width: fit-content;
+    background: #FF8506;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+}
 
 .promo-new {
     background: url("assets/promo-bg.png") center / cover no-repeat;
@@ -716,6 +730,7 @@ html, body {
     line-height: 1.15;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Black Han Sans', sans-serif;
 }
 
 .promo-new-text .highlight {
