@@ -253,7 +253,7 @@ html, body {
     background-color: #FF8506;
     color: white;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: bold; font-size: 1rem;
     cursor: pointer;
 
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
@@ -267,7 +267,7 @@ html, body {
 .btn-ghost {
       padding: .85rem 2rem; border-radius: 999px;
       background: transparent; color: #fff;
-      font-weight: 700; font-size: 1rem;
+      font-weight: bold; font-size: 1rem;
       border: 2px solid rgba(255,255,255,.5);
       transition: background .2s, border-color .2s;
     }
