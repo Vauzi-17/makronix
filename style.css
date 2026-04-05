@@ -774,30 +774,21 @@ html, body {
 .team-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #FF8506;
+    color: #1a0a00;
     margin-bottom: 0.6rem;
     font-family: 'Black Han Sans', sans-serif;
 }
 
-.team-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 3rem;
-}
-
-.team-line .line {
-    width: clamp(160px, 25vw, 260px);
-    height: 3px;
+.team-badge {
+    display: inline-block;
+    width: fit-content;
     background: #FF8506;
-}
-
-.team-line .dot {
-    width: 8px;
-    height: 8px;
-    background: #FF8506;
-    transform: rotate(45deg);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
 }
 
 .team-container {
@@ -853,27 +844,6 @@ html, body {
     color: #EA070F;
     margin-bottom: 0.6rem;
     font-family: 'Black Han Sans', sans-serif;
-}
-
-.testimoni-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 4rem;
-}
-
-.testimoni-line .line {
-    width: clamp(160px, 25vw, 260px);
-    height: 3px;
-    background: #EA070F;
-}
-
-.testimoni-line .dot {
-    width: 8px;
-    height: 8px;
-    background: #FF8506;
-    transform: rotate(45deg);
 }
 
 .testimoni-container {
@@ -1052,10 +1022,10 @@ html, body {
 @media (max-width: 900px) {
     .footer-container {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
     .footer-social {
-        justify-content: center;
+        justify-content: left;
     }
 }
 
@@ -1200,6 +1170,12 @@ html, body {
 
     .hero-text h3 {
         font-size: 0.6rem;
+    }
+
+    .hero-btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
     .hero-btn {
@@ -1433,7 +1409,7 @@ html, body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 2rem var(--px);
-        text-align: center;
+        text-align: left;
     }
 
     .footer-brand h2 {
@@ -1447,7 +1423,7 @@ html, body {
     }
 
     .footer-social {
-        justify-content: center;
+        justify-content: left;
         gap: 10px;
     }
 
