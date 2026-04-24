@@ -42,15 +42,6 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-
-    /* garis diagonal tipis ala desain */
-    background-image: repeating-linear-gradient(
-        -45deg,
-        transparent 0,
-        transparent 18px,
-        rgba(255, 133, 6, 0.08) 18px,
-        rgba(255, 133, 6, 0.08) 36px
-    );
 }
 
 .header a {
@@ -76,23 +67,35 @@ body {
 
 .header h1 {
     font-family: 'Black Han Sans', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--color-primary);
-    letter-spacing: 2px;
-    /* garis kiri-kanan ala desain */
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--color-text);
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.header h1::before,
-.header h1::after {
-    content: '';
-    display: block;
-    width: clamp(60px, 12vw, 160px);
-    height: 3px;
-    background: var(--color-primary);
-    border-radius: 2px;
+.header h1 em {
+    font-style: normal;
+    color: var(--color-secondary);
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-badge {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 999px;
 }
 
 /* ============================================
