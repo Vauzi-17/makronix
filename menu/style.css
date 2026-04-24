@@ -1,0 +1,232 @@
+/* ============================================
+   menu.css — Halaman Menu Makronix
+   Gunakan bersama style.css (root variables)
+   ============================================ */
+
+/* Import root variables dari style.css jika dipakai standalone */
+:root {
+    --color-primary:      #EA070F;
+    --color-primary-dark: #E52E02;
+    --color-secondary:    #FF8506;
+    --color-accent:       #EDFE00;
+    --color-text:         #1a0a00;
+    --color-bg-warm:      #FFF8EE;
+    --color-white:        #ffffff;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--color-secondary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    background-color: var(--color-white);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /* garis diagonal tipis ala desain */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent 0,
+        transparent 18px,
+        rgba(255, 133, 6, 0.08) 18px,
+        rgba(255, 133, 6, 0.08) 36px
+    );
+}
+
+.header a {
+    position: absolute;
+    left: 1.5rem;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.header a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.header h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--color-primary);
+    font-style: italic;
+    letter-spacing: 2px;
+    /* garis kiri-kanan ala desain */
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header h1::before,
+.header h1::after {
+    content: '';
+    display: block;
+    width: clamp(60px, 12vw, 160px);
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* ============================================
+   MENU LIST — GRID
+   ============================================ */
+.menu-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* ============================================
+   MENU CARD
+   ============================================ */
+.menu-card {
+    background: var(--color-bg-warm);
+    border-radius: 20px;
+    padding: 1.4rem 1.2rem 1.2rem;
+    border-top: 40px solid var(--color-primary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: center;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(234, 7, 15, 0.2);
+}
+
+/* Area gambar produk */
+.menu-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover img {
+    transform: translateY(-5px) scale(1.04);
+}
+
+/* Placeholder gambar kosong */
+.menu-card img:not([src]),
+.menu-card img[src=""] {
+    background: linear-gradient(135deg, #f0e8d8 0%, #e8dcc8 100%);
+    border-radius: 12px;
+    opacity: 0.5;
+}
+
+/* Nama produk */
+.menu-card h2:first-of-type {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    line-height: 1.3;
+    margin-top: 0.4rem;
+}
+
+/* Harga */
+.menu-card h2:last-of-type {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.4rem;
+}
+
+/* Tombol Add */
+.menu-card .add-btn,
+.menu-card button {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.55rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card .add-btn:hover,
+.menu-card button:hover {
+    background: var(--color-primary-dark);
+    transform: scale(0.96);
+    box-shadow: 0 6px 18px rgba(234, 7, 15, 0.35);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .menu-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+        padding: 2rem 1rem 3rem;
+    }
+
+    .menu-card img {
+        height: 140px;
+    }
+
+    .menu-card h2:first-of-type {
+        font-size: 0.9rem;
+    }
+
+    .menu-card h2:last-of-type {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .menu-list {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    .menu-card img {
+        height: 180px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+}
