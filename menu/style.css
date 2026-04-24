@@ -209,6 +209,36 @@ body {
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
+     .header {
+        padding: 0.8rem 1.2rem;
+        flex-direction: row;        /* ubah ke row */
+        align-items: center;
+        justify-content: center;
+        position: relative;         /* tetap relative */
+    }
+
+    .header a {
+        position: absolute;         /* balik ke absolute */
+        left: 1.2rem;
+        font-size: 0.8rem;
+        padding: 0.35rem 0.6rem;
+    }
+
+    .header-title {
+        width: 100%;
+        align-items: center;
+        padding: 0 3.5rem;          /* beri ruang biar ga nabrak tombol back */
+        padding-right: 2rem;
+    }
+
+    .header h1 {
+        font-size: clamp(0.95rem, 4.5vw, 1.4rem);
+        text-align: center;
+        white-space: nowrap;
+    }
+    .header a .btn-label {
+        display: none;
+    }
     .menu-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
@@ -239,6 +269,11 @@ body {
     }
 
     .header h1 {
-        font-size: 1.6rem;
+        font-size: 1rem;
+    }
+
+    .header-badge {
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
     }
 }
