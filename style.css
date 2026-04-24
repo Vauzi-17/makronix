@@ -8,6 +8,15 @@
 :root {
     --max-w: 1400px;
     --px: clamp(1.5rem, 4vw, 3rem);
+
+    /* ===== COLOR PALETTE ===== */
+    --color-primary:      #EA070F;   /* merah utama */
+    --color-primary-dark: #E52E02;   /* merah gelap */
+    --color-secondary:    #FF8506;   /* oranye */
+    --color-accent:       #EDFE00;   /* kuning terang */
+    --color-text:         #1a0a00;   /* coklat tua / hitam */
+    --color-bg-warm:      #FFF8EE;   /* krem / background hangat */
+    --color-white:        #ffffff;   /* putih */
 }
 
 body {
@@ -15,7 +24,7 @@ body {
 }
 
 .navbar {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--color-white) 0%, #f8f9fa 100%);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -64,7 +73,7 @@ body {
 
 .nav-logo {
     text-decoration: none;
-    color: #EA070F;
+    color: var(--color-primary);
 }
 
 .nav-brand strong {
@@ -89,7 +98,7 @@ body {
 }
 
 .nav-menu a {
-    color: #1a0a00;
+    color: var(--color-text);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
@@ -107,13 +116,13 @@ body {
     height: 2px;
     bottom: 0;
     left: 50%;
-    background: #E52E02;
+    background: var(--color-primary-dark);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
 
 .nav-menu a:hover {
-    color: #E52E02;
+    color: var(--color-primary-dark);
 }
 
 .nav-menu a:hover::before {
@@ -121,7 +130,7 @@ body {
 }
 
 .nav-menu a.active {
-    color: #E52E02;
+    color: var(--color-primary-dark);
 }
 
 .nav-menu a.active::before {
@@ -130,8 +139,8 @@ body {
 
 .nav-button {
     padding: 0.5rem 1.2rem;
-    background: #E52E02;
-    color: #fff;
+    background: var(--color-primary-dark);
+    color: var(--color-white);
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -142,7 +151,7 @@ body {
 }
 
 .nav-button:hover {
-    background: #E52E02;
+    background: var(--color-primary-dark);
     box-shadow: 0 6px 20px rgba(175, 125, 76, 0.4);
     transform: scale(0.9);
 }
@@ -159,7 +168,7 @@ body {
 .hamburger span {
     width: 28px;
     height: 3px;
-    background: #E52E02;
+    background: var(--color-primary-dark);
     margin: 3px 0;
     border-radius: 3px;
     transition: all 0.3s ease;
@@ -183,8 +192,8 @@ html, body {
 
 .hero {
     min-height: calc(100vh - 80px);
-    background-color: #EA070F;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -205,7 +214,6 @@ html, body {
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 var(--px);
-    /* hapus padding-left: clamp(...) yang berbeda sendiri */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -227,7 +235,7 @@ html, body {
 }
 
 .hero-text h1 em {
-      font-style: normal; color: #EDFE00;
+      font-style: normal; color: var(--color-accent);
 }
 
 .hero-text h3 {
@@ -250,8 +258,8 @@ html, body {
     border-radius: 999px;
     border: none;
 
-    background-color: #FF8506;
-    color: white;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
     font-size: 1rem;
     font-weight: bold; font-size: 1rem;
     cursor: pointer;
@@ -266,12 +274,12 @@ html, body {
 
 .btn-ghost {
       padding: .85rem 2rem; border-radius: 999px;
-      background: transparent; color: #fff;
+      background: transparent; color: var(--color-white);
       font-weight: bold; font-size: 1rem;
       border: 2px solid rgba(255,255,255,.5);
       transition: background .2s, border-color .2s;
     }
-.btn-ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+.btn-ghost:hover { background: rgba(255,255,255,.12); border-color: var(--color-white); }
 
 @keyframes float-sway {
     0% {
@@ -310,7 +318,7 @@ html, body {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    background: #FFF8EE;
+    background: var(--color-bg-warm);
     color: #333;
     padding: 5rem 0;
 }
@@ -359,8 +367,8 @@ html, body {
 .tentang-badge {
     display: inline-block;
     width: fit-content;
-    background: #FF8506;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -372,14 +380,14 @@ html, body {
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 900;
     line-height: 1.15;
-    color: #1a0a00;
+    color: var(--color-text);
     margin: 0;
     font-family: 'Black Han Sans', sans-serif;
 }
 
 .tentang-text h1 em {
     font-style: normal;
-    color: #FF8506;
+    color: var(--color-secondary);
 }
 
 .tentang-text p {
@@ -390,11 +398,11 @@ html, body {
 }
 
 .produk {
-    background: #fff;
+    background: var(--color-white);
     text-align: center;
     padding: 6rem var(--px);
     min-height: calc(100vh - 80px);
-    background-color: #EA070F;
+    background-color: var(--color-primary);
     position: relative;
 }
 
@@ -420,7 +428,7 @@ html, body {
     display: inline-block;
     width: fit-content;
     background: #000000;
-    color: #fff;
+    color: var(--color-white);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -432,7 +440,7 @@ html, body {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    background: #FF8506;
+    background: var(--color-secondary);
     border-radius: 32px;
     padding: 3rem 4rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -478,12 +486,12 @@ html, body {
 .produk-card h3 {
     font-size: 1rem;
     font-weight: 700;
-    color: #E52E02;
+    color: var(--color-primary-dark);
 }
 
 .harga {
     font-weight: 700;
-    color: #E52E02;
+    color: var(--color-primary-dark);
 }
 
 .order-btn {
@@ -491,8 +499,8 @@ html, body {
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 999px;
-    background: #EA070F;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-white);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -506,7 +514,7 @@ html, body {
 .produk-card.empty {
     justify-content: center;
     background: rgba(255,255,255,0.3);
-    color: #fff;
+    color: var(--color-white);
     font-weight: 700;
     font-size: 1.1rem;
 }
@@ -519,7 +527,7 @@ html, body {
     height: 60px;
     border-radius: 50%;
     border: none;
-    background: #FF8506;
+    background: var(--color-secondary);
     color: #000;
     font-size: 1.8rem;
     cursor: pointer;
@@ -536,15 +544,15 @@ html, body {
 
 .layanan {
     padding: 6rem var(--px);
-    background: #fff;
+    background: var(--color-white);
     text-align: center;
 }
 
 .layanan-badge {
     display: inline-block;
     width: fit-content;
-    background: #EA070F;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-white);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -555,7 +563,7 @@ html, body {
 .layanan-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #1a0a00;
+    color: var(--color-text);
     margin-bottom: 0.5rem;
     font-family: 'Black Han Sans', sans-serif;
 }
@@ -563,7 +571,7 @@ html, body {
 .layanan-subtitle {
     margin-top: 1rem;
     font-size: 1rem;
-    color: #E52E02;
+    color: var(--color-primary-dark);
     font-weight: 600;
 }
 
@@ -574,10 +582,10 @@ html, body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    background: #fff;
+    background: var(--color-white);
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: #FF8506 1px solid;
+    border: var(--color-secondary) 1px solid;
 }
 
 .layanan-item {
@@ -592,7 +600,7 @@ html, body {
     position: absolute;
     bottom: -50px;
     background: #333;
-    color: #fff;
+    color: var(--color-white);
     padding: 6px 12px;
     font-size: 0.8rem;
     border-radius: 8px;
@@ -616,7 +624,7 @@ html, body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid #E52E02;
+    border: 3px solid var(--color-primary-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -636,12 +644,12 @@ html, body {
 .layanan-item p {
     font-size: 1rem;
     font-weight: 600;
-    color: #EA070F;
+    color: var(--color-primary);
     line-height: 1.5;
 }
 
 .promo-head {
-    background: #fff;
+    background: var(--color-white);
     text-align: center;
     padding: 3rem 1.5rem 2.5rem;
 }
@@ -649,7 +657,7 @@ html, body {
 .promo-head h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #EA070F;
+    color: var(--color-primary);
     margin-bottom: 0.8rem;
     font-family: 'Black Han Sans', sans-serif;
 }
@@ -665,27 +673,27 @@ html, body {
 .promo-head-line .line {
     width: clamp(140px, 20vw, 220px);
     height: 3px;
-    background: #EA070F;
+    background: var(--color-primary);
 }
 
 .promo-head-line .dot {
     width: 8px;
     height: 8px;
-    background: #EA070F;
+    background: var(--color-primary);
     transform: rotate(45deg);
 }
 
 .promo-head p {
     font-size: clamp(0.95rem, 1.5vw, 1.1rem);
     font-weight: 600;
-    color: #E52E02;
+    color: var(--color-primary-dark);
 }
 
 .promo-badge {
     display: inline-block;
     width: fit-content;
-    background: #FF8506;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -696,7 +704,7 @@ html, body {
 .promo-new {
     background: url("assets/promo-bg.png") center / cover no-repeat;
     padding: 6rem 0;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .promo-new-container {
@@ -734,7 +742,7 @@ html, body {
 }
 
 .promo-new-text .highlight {
-    color: #EDFE00; 
+    color: var(--color-accent);
 }
 
 .promo-desc {
@@ -749,8 +757,8 @@ html, body {
     border-radius: 999px;
     border: none;
 
-    background: #FF8506;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
@@ -766,15 +774,14 @@ html, body {
 
 .team {
     padding: 6rem var(--px);
-    background: #fff;
+    background: var(--color-white);
     text-align: center;
 }
 
-/* Judul */
 .team-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #1a0a00;
+    color: var(--color-text);
     margin-bottom: 0.6rem;
     font-family: 'Black Han Sans', sans-serif;
 }
@@ -782,8 +789,8 @@ html, body {
 .team-badge {
     display: inline-block;
     width: fit-content;
-    background: #FF8506;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -824,24 +831,24 @@ html, body {
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    color: #E52E02;
+    color: var(--color-primary-dark);
 }
 
 .team-card p {
     font-size: 0.9rem;
-    color: #FF8506;
+    color: var(--color-secondary);
 }
 
 .testimoni {
     padding: 6rem var(--px);
-    background: #fff;
+    background: var(--color-white);
     text-align: center;
 }
 
 .testimoni-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #EA070F;
+    color: var(--color-primary);
     margin-bottom: 0.6rem;
     font-family: 'Black Han Sans', sans-serif;
 }
@@ -857,24 +864,24 @@ html, body {
 
 .testimoni-card {
     position: relative;
-    background: #FF8506;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     padding: 2rem;
     border-radius: 12px;
     text-align: left;
-    box-shadow: 8px 8px 0 #EA070F;
+    box-shadow: 8px 8px 0 var(--color-primary);
     transition: all 0.3s ease;
 }
 
 .testimoni-card:hover {
-    box-shadow: 16px 16px 0 #EA070F;
+    box-shadow: 16px 16px 0 var(--color-primary);
     transform: scale(1.03);
 }
 
 .stars {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .testimoni-text {
@@ -915,8 +922,8 @@ html, body {
     padding: 0.9rem 2.6rem;
     border-radius: 999px;
 
-    background: #FF8506;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     font-weight: 700;
     text-decoration: none;
 
@@ -930,8 +937,8 @@ html, body {
 }
 
 .footer {
-    background: #EA070F;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-white);
 }
 
 .footer-container {
@@ -963,7 +970,7 @@ html, body {
 .footer-social a {
     width: 42px;
     height: 42px;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-white);
     border-radius: 50%;
 
     display: inline-flex;
@@ -973,7 +980,7 @@ html, body {
     font-size: 0;             
     line-height: 0;            
 
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     transition: 0.3s ease;
 }
@@ -984,10 +991,8 @@ html, body {
     display: block;
 }
 
-
-
 .footer-social a:hover {
-    background: #fff;
+    background: var(--color-white);
     color: #E50914;
 }
 
@@ -999,7 +1004,7 @@ html, body {
 .footer-links a {
     display: block;
     font-size: 0.95rem;
-    color: #fff;
+    color: var(--color-white);
     opacity: 0.9;
     margin-bottom: 0.6rem;
     text-decoration: none;
@@ -1091,7 +1096,7 @@ html, body {
         height: 2px;
         bottom: 0;
         left: 50%;
-        background: #E52E02;
+        background: var(--color-primary-dark);
         transition: all 0.3s ease;
         transform: translateX(-50%);
     }
@@ -1277,7 +1282,7 @@ html, body {
         width: 42px;
         height: 42px;
         font-size: 1.2rem;
-        border: 6px solid #fff;
+        border: 6px solid var(--color-white);
     }
 
     .produk-nav.left  { left: -15px; }
@@ -1397,7 +1402,7 @@ html, body {
     }
 
     .testimoni-card {
-        box-shadow: 10px 10px 0 #EA070F;
+        box-shadow: 10px 10px 0 var(--color-primary);
     }
 
     .testimoni-text {
