@@ -81,7 +81,40 @@
             <button class="add-btn"><i class="fa-solid fa-cart-plus"></i> Add</button>
         </div>
     </section>
+    <!-- Floating Cart Button -->
+    <button class="cart-fab" id="cartFab">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h2>Keranjang</h2>
+            <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">Rp. 0</strong>
+            </div>
+            <div class="cart-wa-wrap">
+                <label>Pesan WA:</label>
+                <textarea id="waMessage" rows="5"></textarea>
+            </div>
+            <button class="cart-send-btn" id="cartSend">
+                <i class="fa-brands fa-whatsapp"></i> Kirim ke WhatsApp
+            </button>
+        </div>
+    </div>
     <script src="/menu/script.js"></script>
+    <script src="/menu/cart.js"></script>
 </body>
 
 </html>
