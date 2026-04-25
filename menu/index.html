@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,33 @@
         href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nunito:wght@400;600;700;800;900&display=swap"
         rel="stylesheet" />
 </head>
+
 <body>
     <section class="header">
-    <a href="../"><i class="fa-solid fa-arrow-left"></i><span class="btn-label"> Kembali</span></a>
-    <div class="header-title">
-        <span class="header-badge">DAFTAR MENU</span>
-        <h1>Pilih Favoritmu di<em>Makronix!</em></h1>
-    </div>
+        <a href="../"><i class="fa-solid fa-arrow-left"></i><span class="btn-label"> Kembali</span></a>
+        <div class="header-title">
+            <span class="header-badge">DAFTAR MENU</span>
+            <h1>Pilih Favoritmu di<em>Makronix!</em></h1>
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="banner-track">
+            <div class="banner-slide"><img src="/assets/banner/banner1.png" alt="Banner 1"></div>
+            <div class="banner-slide"><img src="/assets/banner/banner2.png" alt="Banner 2"></div>
+            <div class="banner-slide"><img src="/assets/banner/banner3.png" alt="Banner 3"></div>
+            <div class="banner-slide"><img src="/assets/banner/banner4.png" alt="Banner 4"></div>
+        </div>
+
+        <button class="banner-btn banner-prev">&#10094;</button>
+        <button class="banner-btn banner-next">&#10095;</button>
+
+        <div class="banner-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </section>
 
     <section class="menu-list">
@@ -60,6 +81,7 @@
             <button class="add-btn"><i class="fa-solid fa-cart-plus"></i> Add</button>
         </div>
     </section>
-
+    <script src="/menu/script.js"></script>
 </body>
+
 </html>
