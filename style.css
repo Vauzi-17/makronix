@@ -1111,6 +1111,10 @@ html, body {
         border-radius: 10px;
     }
 
+    .hero {
+        position: relative;
+    }
+
     .hero-stripe {
         background: repeating-linear-gradient(
             -45deg,
