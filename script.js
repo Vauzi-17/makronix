@@ -5,11 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    let scrollPos = 0;
+
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-        document.documentElement.classList.toggle('menu-open'); // tambahin ini
+
+        if (navMenu.classList.contains('active')) {
+            // Simpan posisi scroll lalu lock
+            scrollPos = window.scrollY;
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.classList.add('menu-open');
+            document.documentElement.classList.add('menu-open');
+        } else {
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+            document.body.style.top = '';
+
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, scrollPos);
+            setTimeout(() => {
+                document.documentElement.style.scrollBehavior = '';
+            }, 50);
+        }
     });
 
     navLinks.forEach(link => {
@@ -17,7 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.classList.remove('menu-open');
-            document.documentElement.classList.remove('menu-open'); // tambahin ini
+            document.documentElement.classList.remove('menu-open');
+            document.body.style.top = '';
+
+            // Skip animasi scroll saat restore posisi
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, scrollPos);
+            setTimeout(() => {
+                document.documentElement.style.scrollBehavior = '';
+            }, 50);
         });
     });
     // Active link on scroll
