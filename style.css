@@ -277,9 +277,9 @@ html, body {
       background: transparent; color: var(--color-white);
       font-weight: bold; font-size: 1rem;
       border: 2px solid rgba(255,255,255,.5);
-      transition: background .2s, border-color .2s;
+      transition: background .2s, border-color .2s, transform .2s;
     }
-.btn-ghost:hover { background: rgba(255,255,255,.12); border-color: var(--color-white); }
+.btn-ghost:hover { background: rgba(255,255,255,.12); border-color: var(--color-white); transform: scale(0.9); }
 
 @keyframes float-sway {
     0% {
@@ -764,11 +764,11 @@ html, body {
     cursor: pointer;
 
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .promo-btn:hover {
-    transform: translateY(-3px);
+    transform: scale(0.9) !important;
     box-shadow: 0 16px 40px rgba(0,0,0,0.45);
 }
 
