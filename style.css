@@ -21,15 +21,17 @@
 
 body {
     font-family: 'Nunito', sans-serif;
+    padding-top: 80px;
 }
 
 .navbar {
     background: linear-gradient(135deg, var(--color-white) 0%, #f8f9fa 100%);
     padding: 1rem 0;
-    position: sticky;
+    position: fixed;
     top: 0;
-    /*box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);*/
-    backdrop-filter: blur(10px);
+    left: 0;
+    right: 0;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.98);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -1024,6 +1026,12 @@ html, body {
     opacity: 0.9;
 }
 
+html.menu-open,
+body.menu-open {
+    overflow: hidden;
+    height: 100%;
+}
+
 @media (max-width: 900px) {
     .footer-container {
         grid-template-columns: 1fr;
@@ -1064,6 +1072,8 @@ html, body {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
         gap: 0;
+        height: calc(100vh - 70px);
+        overflow-y: hidden;
     }
 
     .nav-menu.active {

@@ -8,16 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        document.documentElement.classList.toggle('menu-open'); // tambahin ini
     });
 
-    // Close menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open'); // tambahin ini
         });
     });
-
     // Active link on scroll
     const sections = document.querySelectorAll('section');
 
