@@ -1111,6 +1111,21 @@ html, body {
         border-radius: 10px;
     }
 
+    .hero-stripe {
+        background: repeating-linear-gradient(
+            -45deg,
+            transparent 0, transparent 20px,
+            rgba(255,255,255,.10) 20px, rgba(255,255,255,.7) 40px
+        );
+    }
+
+    .produk::before {
+        background: repeating-linear-gradient(
+            -55deg, transparent 0, transparent 30px,
+            rgba(255,255,255,.10) 30px, rgba(255,255,255,.7) 60px
+        );
+    }
+
     .hero-btn-group {
         align-items: center;
     }

@@ -53,7 +53,7 @@ let index = 0;
 
 function slideProduk(dir) {
     const track = document.querySelector('.produk-track');
-    const cardWidth = 237; // lebar kartu + gap
+    const cardWidth = 280; // lebar kartu + gap
     index += dir;
 
     const maxIndex = track.children.length - 3;
